@@ -11,8 +11,8 @@ import java.time.LocalDateTime;
 
 import static javax.persistence.FetchType.LAZY;
 
-@Entity
-@Table(name = "Memory")
+@Entity(name = "memory")
+@Table(name = "memory")
 @Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)

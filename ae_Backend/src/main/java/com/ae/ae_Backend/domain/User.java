@@ -5,7 +5,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +19,7 @@ public class User {
     private String name;
     private int gender;
     private String birth_year;
-    private LocalDateTime signup_date;
+    private String signup_date;
 
     @JsonIgnore
     @OneToMany(mappedBy = "user")
@@ -28,5 +27,17 @@ public class User {
 
     @JsonIgnore
     @OneToMany(mappedBy = "user")
-    private List<UserAnswer> userAnswers = new ArrayList<>();
+    private List<UserAns> userAnswers = new ArrayList<>();
+
+    @JsonIgnore
+    @OneToOne(mappedBy = "user")
+    private Diary diary;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "user")
+    private List<MmseAns> mmseAnswers = new ArrayList<>();
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "user")
+    private List<Userdata> userdatas = new ArrayList<>();
 }

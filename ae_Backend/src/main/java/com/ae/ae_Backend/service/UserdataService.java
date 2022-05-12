@@ -1,24 +1,24 @@
 package com.ae.ae_Backend.service;
 
-import com.ae.ae_Backend.domain.UserData;
+import com.ae.ae_Backend.domain.Userdata;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import com.ae.ae_Backend.repository.UserDataRepository;
+import com.ae.ae_Backend.repository.UserdataRepository;
 
 import java.util.List;
 
 @Service
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
-public class UserDataService {
-    private final UserDataRepository userDataRepository;
+public class UserdataService {
+    private final UserdataRepository userDataRepository;
 
-    public List<UserData> findUserDatas() {
+    public List<Userdata> findUserDatas() {
         return userDataRepository.findAll();
     }
 
-    public UserData findOne(Long user_data_id) {
+    public Userdata findOne(Long user_data_id) {
         return userDataRepository.findOne(user_data_id);
     }
 }

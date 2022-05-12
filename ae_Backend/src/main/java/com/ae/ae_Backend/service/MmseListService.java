@@ -1,23 +1,22 @@
 package com.ae.ae_Backend.service;
-import com.ae.ae_Backend.domain.Mmse_List;
+import com.ae.ae_Backend.domain.MmseList;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import com.ae.ae_Backend.repository.Mmse_ListRepository;
-
+import com.ae.ae_Backend.repository.MmseListRepository;
 import java.util.List;
 
 @Service
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
-public class MMse_ListService {
-    private final Mmse_ListRepository mmseListRepository;
+public class MmseListService {
+    private final MmseListRepository mmseListRepository;
 
-    public List<Mmse_List> findmmseLists() {
+    public List<MmseList> findmmseLists() {
         return mmseListRepository.findAll();
     }
 
-    public Mmse_List findOne(Long mId) {
+    public MmseList findOne(Long mId) {
         return mmseListRepository.findOne(mId);
     }
 }
